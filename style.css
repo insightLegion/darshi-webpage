@@ -166,126 +166,7 @@ img { display: block; max-width: 100%; }
 }
 
 /* ============================
-   HERO — compact, punchy
-   ============================ */
-#hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  padding: 120px 40px 80px;
-  overflow: hidden;
-}
-
-.hero-bg-pattern {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 20% 80%, rgba(82, 183, 136, 0.06) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(27, 67, 50, 0.04) 0%, transparent 50%);
-  pointer-events: none;
-}
-
-.hero-content {
-  text-align: center;
-  max-width: 800px;
-  position: relative;
-  z-index: 1;
-}
-
-.hero-logo-wrapper { margin-bottom: 32px; }
-
-.hero-logo {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin: 0 auto;
-  box-shadow: 0 8px 40px rgba(27, 67, 50, 0.15);
-}
-
-.hero-title { margin-bottom: 24px; }
-
-.hero-title-brand {
-  display: block;
-  font-family: var(--font-display);
-  font-size: clamp(3.5rem, 8vw, 7rem);
-  color: var(--green-dark);
-  line-height: 1.1;
-  margin-bottom: 8px;
-}
-
-.hero-title-sub {
-  display: block;
-  font-family: var(--font-body);
-  font-size: clamp(1rem, 2.5vw, 1.35rem);
-  font-weight: 400;
-  color: var(--gray-500);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.hero-desc {
-  font-size: clamp(1.05rem, 1.8vw, 1.2rem);
-  color: var(--gray-700);
-  max-width: 560px;
-  margin: 0 auto 40px;
-  line-height: 1.7;
-}
-
-.hero-cta-btn {
-  animation: heroPulse 2.5s ease-in-out infinite;
-}
-
-@keyframes heroPulse {
-  0%, 100% { box-shadow: 0 4px 20px rgba(27, 67, 50, 0.2); }
-  50% { box-shadow: 0 8px 40px rgba(27, 67, 50, 0.35); }
-}
-
-.hero-scroll-hint {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  color: var(--gray-500);
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-}
-
-.scroll-line {
-  width: 1px;
-  height: 40px;
-  background: var(--gray-300);
-  position: relative;
-  overflow: hidden;
-}
-
-.scroll-line::after {
-  content: '';
-  position: absolute;
-  top: -100%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--green-dark);
-  animation: scrollPulse 2s ease-in-out infinite;
-}
-
-@keyframes scrollPulse {
-  0% { top: -100%; }
-  50% { top: 0%; }
-  100% { top: 100%; }
-}
-
-/* ============================
-   EMAIL COLLECTION — THE MAIN EVENT
+   EMAIL COLLECTION
    ============================ */
 #collect {
   position: relative;
@@ -293,7 +174,7 @@ img { display: block; max-width: 100%; }
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 80px 24px;
+  padding: 120px 24px 80px;
   overflow: hidden;
 }
 
@@ -337,7 +218,7 @@ img { display: block; max-width: 100%; }
 .collect-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(10, 10, 10, 0.78);
+  background: rgba(10, 10, 10, 0.4);
   z-index: 1;
 }
 
@@ -360,31 +241,54 @@ img { display: block; max-width: 100%; }
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 580px;
-  background: rgba(255, 255, 255, 0.07);
-  backdrop-filter: blur(28px) saturate(1.4);
-  -webkit-backdrop-filter: blur(28px) saturate(1.4);
+  max-width: 720px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px) saturate(1.2);
+  -webkit-backdrop-filter: blur(12px) saturate(1.2);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 32px;
-  padding: 56px 48px;
+  padding: 64px 56px;
   text-align: center;
   box-shadow:
     0 16px 64px rgba(0, 0, 0, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
-.collect-badge {
-  display: inline-block;
-  font-size: 0.8rem;
-  font-weight: 600;
+.hero-compact-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.hero-logo-compact {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 20px rgba(27, 67, 50, 0.2);
+}
+
+.hero-text-compact {
+  text-align: left;
+}
+
+.hero-title-brand {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  color: var(--green-accent);
+  line-height: 1;
+}
+
+.hero-title-sub {
+  font-family: var(--font-body);
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  font-weight: 500;
+  color: var(--white-pure);
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--green-accent);
-  background: rgba(82, 183, 136, 0.12);
-  border: 1px solid rgba(82, 183, 136, 0.25);
-  padding: 8px 20px;
-  border-radius: 60px;
-  margin-bottom: 28px;
+  margin-top: 4px;
 }
 
 .collect-title {
@@ -403,7 +307,7 @@ img { display: block; max-width: 100%; }
 
 .collect-desc {
   font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.8);
   line-height: 1.6;
   margin-bottom: 32px;
   max-width: 420px;
@@ -440,14 +344,14 @@ img { display: block; max-width: 100%; }
   background: transparent;
   border: none;
   outline: none;
-  padding: 16px 24px;
+  padding: 20px 32px;
   font-family: var(--font-body);
-  font-size: 1.05rem;
+  font-size: 1.25rem;
   color: var(--white-pure);
 }
 
 #collect-email::placeholder {
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .collect-submit {
@@ -455,13 +359,13 @@ img { display: block; max-width: 100%; }
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 16px 32px;
+  padding: 20px 48px;
   border-radius: 60px;
   border: none;
   background: var(--green-accent);
   color: var(--white-pure);
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.3s var(--ease-out);
@@ -487,7 +391,7 @@ img { display: block; max-width: 100%; }
 .collect-privacy {
   margin-top: 18px;
   font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 /* ── Success state ── */
@@ -519,7 +423,7 @@ img { display: block; max-width: 100%; }
 .collect-success-msg span {
   font-weight: 400;
   font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 /* ============================
@@ -861,8 +765,6 @@ img { display: block; max-width: 100%; }
   .vision-stats { grid-template-columns: 1fr; gap: 24px; }
 
   #navbar { padding: 12px 20px; }
-  #hero { padding: 100px 24px 60px; }
-  .hero-logo { width: 90px; height: 90px; }
 
   #features, #vision { padding: var(--section-pad) 24px; }
 
@@ -877,13 +779,14 @@ img { display: block; max-width: 100%; }
     padding: 8px;
   }
 
-  #collect-email { text-align: center; padding: 16px; }
+  #collect-email { text-align: center; padding: 16px; font-size: 1.1rem; }
 
   .collect-submit {
     justify-content: center;
     width: 100%;
     border-radius: 60px;
     padding: 16px;
+    font-size: 1rem;
   }
 
   .evidence-row img {
@@ -895,7 +798,6 @@ img { display: block; max-width: 100%; }
 }
 
 @media (max-width: 600px) {
-  .hero-cta-btn { width: 100%; max-width: 320px; }
 
   .btn-lg { width: 100%; max-width: 320px; }
 

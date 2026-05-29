@@ -23,36 +23,13 @@
   <nav id="navbar">
     <div class="nav-inner">
       <a href="#" class="nav-logo" id="nav-logo">
-        <img src="logo_no-text.jpg" alt="Darshi Logo" class="nav-logo-img">
         <span class="nav-logo-text">Darshi</span>
       </a>
       <a href="#collect" class="nav-cta" id="nav-cta-btn">Get Early Access</a>
     </div>
   </nav>
 
-  <!-- ===== HERO — LOGO + LINER ===== -->
-  <section id="hero">
-    <div class="hero-bg-pattern"></div>
-    <div class="hero-content">
-      <div class="hero-logo-wrapper" id="hero-logo-wrapper">
-        <img src="logo_no-text.jpg" alt="Darshi Eye Logo" class="hero-logo" id="hero-logo">
-      </div>
-      <h1 class="hero-title" id="hero-title">
-        <span class="hero-title-brand">Darshi</span>
-        <span class="hero-title-sub">See the Roads. Fix the System.</span>
-      </h1>
-      <p class="hero-desc" id="hero-desc">
-        One platform to report broken roads, expose failed contracts, and hold officials accountable.
-      </p>
-      <a href="#collect" class="btn btn-primary btn-lg hero-cta-btn" id="hero-cta-btn">Get Early Access ↓</a>
-    </div>
-    <div class="hero-scroll-hint" id="hero-scroll-hint">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
-    </div>
-  </section>
-
-  <!-- ===== EMAIL COLLECTION — THE MAIN EVENT ===== -->
+  <!-- ===== EMAIL COLLECTION HERO ===== -->
   <section id="collect">
     <!-- Background: scrolling pothole evidence -->
     <div class="collect-evidence-bg" aria-hidden="true">
@@ -135,24 +112,25 @@
 
     <!-- Glassmorphism email form -->
     <div class="collect-glass" id="collect-glass">
-      <div class="collect-badge" id="collect-badge">🚀 Early Access</div>
-      <h2 class="collect-title" id="collect-title">Be the first to know<br>when <span class="collect-brand">Darshi</span> launches.</h2>
+      
+      <!-- Compact hero content inside form box -->
+      <div class="hero-compact-header">
+        <img src="logo_no-text.jpg" alt="Darshi Eye Logo" class="hero-logo-compact" id="hero-logo">
+        <div class="hero-text-compact">
+          <h1 class="hero-title-brand">Darshi</h1>
+          <p class="hero-title-sub">See the Roads. Fix the System.</p>
+        </div>
+      </div>
+
+      <h2 class="collect-title" id="collect-title">Join the Waitlist</h2>
       <p class="collect-desc" id="collect-desc">We're building the civic platform India needs. Drop your email — no spam, just progress updates.</p>
 
       <!-- ══ EMAIL FORM ══ -->
-      <form
-        class="collect-form"
-        id="collect-form"
-        action="https://formspree.io/f/YOUR_FORM_ID"
-        method="POST"
-      >
-        <input type="hidden" name="_subject" value="🚀 New Darshi Waitlist Signup!">
-        <input type="hidden" name="_next" value="#">
+      <form class="collect-form" id="collect-form">
         <div class="collect-input-row">
           <div class="collect-input-wrap">
             <input
               type="email"
-              name="email"
               id="collect-email"
               placeholder="you@example.com"
               required

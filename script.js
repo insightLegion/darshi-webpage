@@ -4,8 +4,7 @@
 
 /**
  * Email form handler.
- * Submits to Formspree (see README.md for setup).
- * Falls back to mailto if Formspree is not configured.
+ * Submits to usepostbox.com API.
  */
 function handleCollectSubmit(event) {
   event.preventDefault();
@@ -14,38 +13,30 @@ function handleCollectSubmit(event) {
   const success = document.getElementById("collect-success");
   const email = document.getElementById("collect-email").value;
   const submitBtn = document.getElementById("collect-submit");
-  const formAction = form.getAttribute("action");
 
   // Disable button while submitting
   submitBtn.disabled = true;
   submitBtn.querySelector(".collect-submit-text").textContent = "Sending...";
 
-  // Check if Formspree is configured (not the placeholder)
-  if (formAction && !formAction.includes("YOUR_FORM_ID")) {
-    // ── Real Formspree submission ──
-    fetch(formAction, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify({ email: email }),
+  fetch("https://usepostbox.com/api/ZDgxY2U5ZjYtMTcwZS00NDYxLWE2M2UtMzhlYWU0ZGY4YTM0XzE/f/touch", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      "email": email
     })
-      .then((response) => {
-        if (response.ok) {
-          showSuccess(form, success);
-        } else {
-          throw new Error("Submission failed");
-        }
-      })
-      .catch((err) => {
-        console.error("Form error:", err);
-        // Fallback: still show success (email was captured in Formspree dashboard)
-        showSuccess(form, success);
-      });
-  } else {
-    // ── Formspree not configured — log + show success ──
-    console.log("📧 Email collected (Formspree not configured yet):", email);
-    console.log("→ Set up Formspree to forward emails. See README.md");
+  })
+  .then((response) => {
+    if (response.ok) {
+      showSuccess(form, success);
+    } else {
+      throw new Error("Submission failed");
+    }
+  })
+  .catch((err) => {
+    console.error("Form error:", err);
+    // Still show success for UX if adblockers block the fetch
     showSuccess(form, success);
-  }
+  });
 
   return false;
 }
@@ -58,7 +49,6 @@ function showSuccess(form, success) {
     ease: "power2.in",
     onComplete: () => {
       form.style.display = "none";
-      // Also hide the description and privacy text
       const desc = document.getElementById("collect-desc");
       if (desc) desc.style.display = "none";
       const privacy = document.getElementById("collect-privacy");
@@ -93,53 +83,54 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ── Navbar scroll effect ──
   ScrollTrigger.create({
-    trigger: "#hero",
-    start: "top top",
+    trigger: "#collect",
+    start: "top -80px",
     end: "bottom 80px",
     onLeave: () => document.getElementById("navbar").classList.add("scrolled"),
     onEnterBack: () => document.getElementById("navbar").classList.remove("scrolled"),
   });
 
-  // ── Hero entrance ──
+  // ── Email collection section (Hero) ──
   const heroTl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
   heroTl
-    .from("#hero-logo", {
-      scale: 0.6,
+    .from(".collect-evidence-bg", {
       autoAlpha: 0,
-      duration: 1,
-      ease: "back.out(1.4)",
+      duration: 1.5,
+      ease: "power2.inOut"
     })
-    .from(".hero-title-brand", { y: 40, autoAlpha: 0, duration: 0.8 }, "-=0.4")
-    .from(".hero-title-sub", { y: 20, autoAlpha: 0, duration: 0.6 }, "-=0.3")
-    .from("#hero-desc", { y: 20, autoAlpha: 0, duration: 0.6 }, "-=0.3")
-    .from("#hero-cta-btn", { y: 20, autoAlpha: 0, duration: 0.5 }, "-=0.2")
-    .from("#hero-scroll-hint", { autoAlpha: 0, duration: 0.6 }, "-=0.2");
+    .from("#collect-glass", {
+      y: 40,
+      autoAlpha: 0,
+      scale: 0.98,
+      duration: 1,
+      ease: "power2.out",
+    }, "-=0.8")
+    .from(".hero-compact-header", {
+      y: -20,
+      autoAlpha: 0,
+      duration: 0.6
+    }, "-=0.4")
+    .from("#collect-title", {
+      y: 20,
+      autoAlpha: 0,
+      duration: 0.6
+    }, "-=0.4")
+    .from("#collect-desc", {
+      y: 20,
+      autoAlpha: 0,
+      duration: 0.6
+    }, "-=0.3")
+    .from(".collect-form", {
+      y: 20,
+      autoAlpha: 0,
+      duration: 0.6
+    }, "-=0.2")
+    .from("#collect-evidence-label", {
+      autoAlpha: 0,
+      duration: 0.8,
+    }, "-=0.2");
 
-  // ── Email collection section ──
-  gsap.from("#collect-glass", {
-    y: 60,
-    autoAlpha: 0,
-    scale: 0.96,
-    duration: 1,
-    ease: "power2.out",
-    scrollTrigger: {
-      trigger: "#collect",
-      start: "top 70%",
-      toggleActions: "play none none none",
-    },
-  });
-
-  gsap.from("#collect-evidence-label", {
-    autoAlpha: 0,
-    duration: 0.8,
-    delay: 0.3,
-    scrollTrigger: {
-      trigger: "#collect",
-      start: "top 70%",
-      toggleActions: "play none none none",
-    },
-  });
 
   // ── Features ──
   gsap.from("#features-tag", {
@@ -201,9 +192,8 @@ document.addEventListener("DOMContentLoaded", () => {
     ScrollTrigger.getAll().forEach((t) => t.kill());
     gsap.set(
       [
-        "#hero-logo", ".hero-title-brand", ".hero-title-sub",
-        "#hero-desc", "#hero-cta-btn", "#hero-scroll-hint",
-        "#collect-glass", "#collect-evidence-label",
+        ".collect-evidence-bg", "#collect-glass", ".hero-compact-header",
+        "#collect-title", "#collect-desc", ".collect-form", "#collect-evidence-label",
         "#features-tag", "#features-title", ".feature-card",
         "#dashboard-img",
         "#vision-tag", "#vision-title", ".stat-item", "#vision-text",
