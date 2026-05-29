@@ -1,266 +1,632 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Darshi — See the Roads. Fix the System.</title>
-  <meta name="description" content="Darshi is a civic platform to report road conditions to authorities, unify government contracts and bids, and bring transparency to infrastructure spending. Join the waitlist.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Darshi — See the Roads. Fix the System.</title>
+    <meta
+      name="description"
+      content="Darshi is a civic platform to report road conditions to authorities, unify government contracts and bids, and bring transparency to infrastructure spending. Join the waitlist."
+    />
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- GSAP -->
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js" defer></script>
+    <!-- GSAP -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"
+      defer
+    ></script>
 
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-  <!-- ===== NAVBAR ===== -->
-  <nav id="navbar">
-    <div class="nav-inner">
-      <a href="#" class="nav-logo" id="nav-logo">
-        <span class="nav-logo-text">Darshi</span>
-      </a>
-      <a href="#collect" class="nav-cta" id="nav-cta-btn">Get Early Access</a>
-    </div>
-  </nav>
-
-  <!-- ===== EMAIL COLLECTION HERO ===== -->
-  <section id="collect">
-    <!-- Background: scrolling pothole evidence -->
-    <div class="collect-evidence-bg" aria-hidden="true">
-      <div class="evidence-row evidence-row-1">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.48 PM.jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.49 PM (1).jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.49 PM.jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.50 PM (1).jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.50 PM (2).jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.50 PM.jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.51 PM (1).jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.51 PM (2).jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.51 PM.jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.52 PM (1).jpeg" alt="" loading="lazy">
-        <!-- duplicate for loop -->
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.48 PM.jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.49 PM (1).jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.49 PM.jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.50 PM (1).jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.50 PM (2).jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.50 PM.jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.51 PM (1).jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.51 PM (2).jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.51 PM.jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.52 PM (1).jpeg" alt="" loading="lazy">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ===== NAVBAR ===== -->
+    <nav id="navbar">
+      <div class="nav-inner">
+        <a href="#" class="nav-logo" id="nav-logo">
+          <span class="nav-logo-text">Darshi</span>
+        </a>
+        <a href="#collect" class="nav-cta" id="nav-cta-btn">Get Early Access</a>
       </div>
-      <div class="evidence-row evidence-row-2">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.52 PM.jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.53 PM.jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.54 PM (1).jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.54 PM (2).jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.54 PM.jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.55 PM (1).jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.55 PM.jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.56 PM (1).jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.56 PM (2).jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.56 PM.jpeg" alt="" loading="lazy">
-        <!-- duplicate for loop -->
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.52 PM.jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.53 PM.jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.54 PM (1).jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.54 PM (2).jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.54 PM.jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.55 PM (1).jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.55 PM.jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.56 PM (1).jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.56 PM (2).jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.56 PM.jpeg" alt="" loading="lazy">
-      </div>
-      <div class="evidence-row evidence-row-3">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.57 PM (1).jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.57 PM (2).jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.57 PM.jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.58 PM (1).jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.58 PM.jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.59 PM (1).jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.59 PM (2).jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.59 PM.jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.27.00 PM (1).jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.27.00 PM.jpeg" alt="" loading="lazy">
-        <!-- duplicate for loop -->
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.57 PM (1).jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.57 PM (2).jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.57 PM.jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.58 PM (1).jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.58 PM.jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.59 PM (1).jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.59 PM (2).jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.26.59 PM.jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.27.00 PM (1).jpeg" alt="" loading="lazy">
-        <img src="images/WhatsApp Image 2026-05-29 at 3.27.00 PM.jpeg" alt="" loading="lazy">
-      </div>
-    </div>
+    </nav>
 
-    <!-- Dark overlay -->
-    <div class="collect-overlay"></div>
-
-    <!-- "Coming to a pothole near you" floating label -->
-    <div class="collect-evidence-label" id="collect-evidence-label">Coming to a pothole near you</div>
-
-    <!-- Glassmorphism email form -->
-    <div class="collect-glass" id="collect-glass">
-      
-      <!-- Compact hero content inside form box -->
-      <div class="hero-compact-header">
-        <img src="logo_no-text.jpg" alt="Darshi Eye Logo" class="hero-logo-compact" id="hero-logo">
-        <div class="hero-text-compact">
-          <h1 class="hero-title-brand">Darshi</h1>
-          <p class="hero-title-sub">See the Roads. Fix the System.</p>
+    <!-- ===== EMAIL COLLECTION HERO ===== -->
+    <section id="collect">
+      <!-- Background: scrolling pothole evidence -->
+      <div class="collect-evidence-bg" aria-hidden="true">
+        <div class="evidence-row evidence-row-1">
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.48 PM.jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.49 PM (1).jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.49 PM.jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.50 PM (1).jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.50 PM (2).jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.50 PM.jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.51 PM (1).jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.51 PM (2).jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.51 PM.jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.52 PM (1).jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <!-- duplicate for loop -->
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.48 PM.jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.49 PM (1).jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.49 PM.jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.50 PM (1).jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.50 PM (2).jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.50 PM.jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.51 PM (1).jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.51 PM (2).jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.51 PM.jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.52 PM (1).jpeg"
+            alt=""
+            loading="lazy"
+          />
+        </div>
+        <div class="evidence-row evidence-row-2">
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.52 PM.jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.53 PM.jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.54 PM (1).jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.54 PM (2).jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.54 PM.jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.55 PM (1).jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.55 PM.jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.56 PM (1).jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.56 PM (2).jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.56 PM.jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <!-- duplicate for loop -->
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.52 PM.jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.53 PM.jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.54 PM (1).jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.54 PM (2).jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.54 PM.jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.55 PM (1).jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.55 PM.jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.56 PM (1).jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.56 PM (2).jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.56 PM.jpeg"
+            alt=""
+            loading="lazy"
+          />
+        </div>
+        <div class="evidence-row evidence-row-3">
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.57 PM (1).jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.57 PM (2).jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.57 PM.jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.58 PM (1).jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.58 PM.jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.59 PM (1).jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.59 PM (2).jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.59 PM.jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.27.00 PM (1).jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.27.00 PM.jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <!-- duplicate for loop -->
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.57 PM (1).jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.57 PM (2).jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.57 PM.jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.58 PM (1).jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.58 PM.jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.59 PM (1).jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.59 PM (2).jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.26.59 PM.jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.27.00 PM (1).jpeg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            src="images/WhatsApp Image 2026-05-29 at 3.27.00 PM.jpeg"
+            alt=""
+            loading="lazy"
+          />
         </div>
       </div>
 
-      <h2 class="collect-title" id="collect-title">Join the Waitlist</h2>
-      <p class="collect-desc" id="collect-desc">We're building the civic platform India needs. Drop your email — no spam, just progress updates.</p>
+      <!-- Dark overlay -->
+      <div class="collect-overlay"></div>
 
-      <!-- ══ EMAIL FORM ══ -->
-      <form class="collect-form" id="collect-form">
-        <div class="collect-input-row">
-          <div class="collect-input-wrap">
-            <input
-              type="email"
-              id="collect-email"
-              placeholder="you@example.com"
-              required
-              autocomplete="email"
-              aria-label="Your email address"
-            >
+      <!-- "Coming to a pothole near you" floating label -->
+      <div class="collect-evidence-label" id="collect-evidence-label">
+        Coming to a pothole near you
+      </div>
+
+      <!-- Glassmorphism email form -->
+      <div class="collect-glass" id="collect-glass">
+        <!-- Compact hero content inside form box -->
+        <div class="hero-compact-header">
+          <img
+            src="logo_no-text.jpg"
+            alt="Darshi Eye Logo"
+            class="hero-logo-compact"
+            id="hero-logo"
+          />
+          <div class="hero-text-compact">
+            <h1 class="hero-title-brand">Darshi</h1>
+            <p class="hero-title-sub">See the Roads. Fix the System.</p>
           </div>
-          <button type="submit" class="collect-submit" id="collect-submit">
-            <span class="collect-submit-text">Get Early Access</span>
-            <svg class="collect-submit-arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
         </div>
-      </form>
-      <p class="collect-privacy" id="collect-privacy">We respect your inbox. Unsubscribe anytime.</p>
 
-      <!-- Success state -->
-      <div class="collect-success" id="collect-success" style="display:none;">
-        <div class="collect-success-icon">✓</div>
-        <p class="collect-success-msg">You're on the list!<br><span>We'll reach out when we launch.</span></p>
-      </div>
-    </div>
-  </section>
+        <h2 class="collect-title" id="collect-title">Join the Waitlist</h2>
+        <p class="collect-desc" id="collect-desc">
+          We're building the civic platform India needs. Drop your email — no
+          spam, just progress updates.
+        </p>
 
-  <!-- ===== FEATURES ===== -->
-  <section id="features">
-    <div class="section-header">
-      <span class="section-tag" id="features-tag">What We Do</span>
-      <h2 class="section-title" id="features-title">Three Pillars of Transparency</h2>
-    </div>
-    <div class="features-grid" id="features-grid">
-      <div class="feature-card" id="feature-report">
-        <div class="feature-icon">
-          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="24" cy="20" r="8" stroke="currentColor" stroke-width="2"/>
-            <path d="M4 20C4 20 12 8 24 8s20 12 20 12-8 12-20 12S4 20 4 20z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-            <path d="M12 36l-4 8M36 36l4 8M24 32v12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <h3>Report Road Conditions</h3>
-        <p>Snap a photo, tag the location, and Darshi routes your report to <strong>municipal, state, and national agencies</strong> — all at once.</p>
-      </div>
-      <div class="feature-card" id="feature-contracts">
-        <div class="feature-icon">
-          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="6" y="4" width="36" height="40" rx="4" stroke="currentColor" stroke-width="2"/>
-            <path d="M14 14h20M14 22h14M14 30h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            <circle cx="36" cy="36" r="8" fill="currentColor" opacity="0.15"/>
-            <path d="M33 36h6M36 33v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <h3>Unified Contracts & Bids</h3>
-        <p>Every government road contract, tender, and bid — <strong>searchable in one place</strong>. Track who won and what was delivered.</p>
-      </div>
-      <div class="feature-card" id="feature-expose">
-        <div class="feature-icon">
-          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M24 4L6 44h36L24 4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-            <path d="M24 18v12M24 34v2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <h3>Name & Shame</h3>
-        <p>Contractors who built roads that crumbled, officials who signed off — their names go <strong>public</strong>. Accountability starts with visibility.</p>
-      </div>
-    </div>
+        <!-- ══ EMAIL FORM ══ -->
+        <form class="collect-form" id="collect-form">
+          <div class="collect-input-row">
+            <div class="collect-input-wrap">
+              <input
+                type="email"
+                id="collect-email"
+                placeholder="you@example.com"
+                required
+                autocomplete="email"
+                aria-label="Your email address"
+              />
+            </div>
+            <button type="submit" class="collect-submit" id="collect-submit">
+              <span class="collect-submit-text">Get Early Access</span>
+              <svg class="collect-submit-arrow" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M5 12h14M13 6l6 6-6 6"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+        </form>
+        <p class="collect-privacy" id="collect-privacy">
+          We respect your inbox. Unsubscribe anytime.
+        </p>
 
-    <!-- Dashboard Preview -->
-    <div class="dashboard-preview" id="dashboard-preview">
-      <div class="dashboard-label">
-        <span class="section-tag">Live Dashboard</span>
-        <p class="dashboard-caption">Our data engine already indexes <strong>5,400+</strong> government records across districts.</p>
-      </div>
-      <div class="dashboard-img-wrapper">
-        <img src="dashboard-working.jpeg" alt="Darshi Dashboard — structured government data" class="dashboard-img" id="dashboard-img">
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== VISION ===== -->
-  <section id="vision">
-    <div class="vision-content">
-      <span class="section-tag" id="vision-tag">The Vision</span>
-      <h2 class="vision-title" id="vision-title">Roads built with<br>our money deserve<br><span class="text-accent">our oversight.</span></h2>
-      <div class="vision-stats" id="vision-stats">
-        <div class="stat-item" id="stat-1">
-          <span class="stat-number">₹3.2L Cr</span>
-          <span class="stat-label">Spent on roads annually</span>
-        </div>
-        <div class="stat-item" id="stat-2">
-          <span class="stat-number">1.5 Lakh+</span>
-          <span class="stat-label">Road accident deaths/year</span>
-        </div>
-        <div class="stat-item" id="stat-3">
-          <span class="stat-number">0</span>
-          <span class="stat-label">Unified accountability platforms</span>
+        <!-- Success state -->
+        <div class="collect-success" id="collect-success" style="display: none">
+          <div class="collect-success-icon">✓</div>
+          <p class="collect-success-msg">
+            You're on the list!<br /><span
+              >We'll reach out when we launch.</span
+            >
+          </p>
         </div>
       </div>
-      <p class="vision-text" id="vision-text">
-        Darshi connects citizens directly with the agencies responsible for road maintenance. 
-        No more endless redirects. No more "not our department." 
-        One report. Every authority notified. Full transparency.
-      </p>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===== BOTTOM CTA ===== -->
-  <section id="cta">
-    <div class="cta-content">
-      <h2 class="cta-title" id="cta-title">
-        <span class="cta-title-brand">Darshi</span>
-        The eye that watches<br>the roads.
-      </h2>
-      <p class="cta-desc" id="cta-desc">Don't wait for the next pothole to swallow your tire.</p>
-      <a href="#collect" class="btn btn-primary btn-lg" id="cta-join-btn">Join the Waitlist ↑</a>
-    </div>
-  </section>
-
-  <!-- ===== FOOTER ===== -->
-  <footer id="footer">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <img src="logo_no-text.jpg" alt="Darshi" class="footer-logo">
-        <span class="footer-brand-text">Darshi</span>
+    <!-- ===== FEATURES ===== -->
+    <section id="features">
+      <div class="section-header">
+        <span class="section-tag" id="features-tag">What We Do</span>
+        <h2 class="section-title" id="features-title">
+          Three Pillars of Transparency
+        </h2>
       </div>
-      <p class="footer-tagline">See the Roads. Fix the System.</p>
-      <div class="footer-bottom">
-        <span>&copy; 2026 Darshi. Built for the people.</span>
+      <div class="features-grid" id="features-grid">
+        <div class="feature-card" id="feature-report">
+          <div class="feature-icon">
+            <svg
+              viewBox="0 0 48 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="24"
+                cy="20"
+                r="8"
+                stroke="currentColor"
+                stroke-width="2"
+              />
+              <path
+                d="M4 20C4 20 12 8 24 8s20 12 20 12-8 12-20 12S4 20 4 20z"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M12 36l-4 8M36 36l4 8M24 32v12"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </div>
+          <h3>Report Road Conditions</h3>
+          <p>
+            Snap a photo, tag the location, and Darshi routes your report to
+            <strong>municipal, state, and national agencies</strong> — all at
+            once.
+          </p>
+        </div>
+        <div class="feature-card" id="feature-contracts">
+          <div class="feature-icon">
+            <svg
+              viewBox="0 0 48 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="6"
+                y="4"
+                width="36"
+                height="40"
+                rx="4"
+                stroke="currentColor"
+                stroke-width="2"
+              />
+              <path
+                d="M14 14h20M14 22h14M14 30h18"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+              <circle
+                cx="36"
+                cy="36"
+                r="8"
+                fill="currentColor"
+                opacity="0.15"
+              />
+              <path
+                d="M33 36h6M36 33v6"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </div>
+          <h3>Unified Contracts & Bids</h3>
+          <p>
+            Every government road contract, tender, and bid —
+            <strong>searchable in one place</strong>. Track who won and what was
+            delivered.
+          </p>
+        </div>
+        <div class="feature-card" id="feature-expose">
+          <div class="feature-icon">
+            <svg
+              viewBox="0 0 48 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24 4L6 44h36L24 4z"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M24 18v12M24 34v2"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+              />
+            </svg>
+          </div>
+          <h3>Name & Shame</h3>
+          <p>
+            Contractors who built roads that crumbled, officials who signed off
+            — their names go <strong>public</strong>. Accountability starts with
+            visibility.
+          </p>
+        </div>
       </div>
-    </div>
-  </footer>
 
-  <script src="script.js"></script>
-</body>
+      <!-- Dashboard Preview -->
+      <div class="dashboard-preview" id="dashboard-preview">
+        <div class="dashboard-label">
+          <span class="section-tag">Live Dashboard</span>
+          <p class="dashboard-caption">
+            Our data engine already indexes <strong>5,400+</strong> government
+            records across districts.
+          </p>
+        </div>
+        <div class="dashboard-img-wrapper">
+          <img
+            src="dashboard-working.jpeg"
+            alt="Darshi Dashboard — structured government data"
+            class="dashboard-img"
+            id="dashboard-img"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== VISION ===== -->
+    <section id="vision">
+      <div class="vision-content">
+        <span class="section-tag" id="vision-tag">The Vision</span>
+        <h2 class="vision-title" id="vision-title">
+          Roads built with<br />our money deserve<br /><span class="text-accent"
+            >our oversight.</span
+          >
+        </h2>
+        <div class="vision-stats" id="vision-stats">
+          <div class="stat-item" id="stat-1">
+            <span class="stat-number">₹3.2L Cr</span>
+            <span class="stat-label">Spent on roads annually</span>
+          </div>
+          <div class="stat-item" id="stat-2">
+            <span class="stat-number">1.5 Lakh+</span>
+            <span class="stat-label">Road accident deaths/year</span>
+          </div>
+          <div class="stat-item" id="stat-3">
+            <span class="stat-number">0</span>
+            <span class="stat-label">Unified accountability platforms</span>
+          </div>
+        </div>
+        <p class="vision-text" id="vision-text">
+          Darshi connects citizens directly with the agencies responsible for
+          road maintenance. No more endless redirects. No more "not our
+          department." One report. Every authority notified. Full transparency.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== BOTTOM CTA ===== -->
+    <section id="cta">
+      <div class="cta-content">
+        <h2 class="cta-title" id="cta-title">
+          <span class="cta-title-brand">Darshi</span>
+          The eye that watches<br />the roads.
+        </h2>
+        <p class="cta-desc" id="cta-desc">
+          Don't wait for the next pothole to swallow your tire.
+        </p>
+        <a href="#collect" class="btn btn-primary btn-lg" id="cta-join-btn"
+          >Join the Waitlist ↑</a
+        >
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="logo_no-text.jpg" alt="Darshi" class="footer-logo" />
+          <span class="footer-brand-text">Darshi</span>
+        </div>
+        <p class="footer-tagline">See the Roads. Fix the System.</p>
+        <div class="footer-bottom">
+          <span>&copy; 2026 Darshi. Built for the people.</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>
