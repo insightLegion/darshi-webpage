@@ -3,6 +3,44 @@
    Minimal, purposeful scroll-triggered reveals
    ============================ */
 
+// Waitlist form handler (global)
+function handleWaitlist(event) {
+  event.preventDefault();
+  const form = document.getElementById("waitlist-form");
+  const success = document.getElementById("waitlist-success");
+  const email = document.getElementById("waitlist-email").value;
+
+  // In production, this would POST to a backend
+  console.log("Waitlist signup:", email);
+
+  // Animate out form, animate in success
+  gsap.to(form, {
+    autoAlpha: 0,
+    y: -10,
+    duration: 0.4,
+    ease: "power2.in",
+    onComplete: () => {
+      form.style.display = "none";
+      success.style.display = "block";
+      gsap.from(success, {
+        autoAlpha: 0,
+        y: 20,
+        scale: 0.95,
+        duration: 0.5,
+        ease: "back.out(1.4)",
+      });
+      gsap.from(".success-icon", {
+        scale: 0,
+        duration: 0.4,
+        delay: 0.15,
+        ease: "back.out(2)",
+      });
+    },
+  });
+
+  return false;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   // Register ScrollTrigger
   gsap.registerPlugin(ScrollTrigger);
@@ -13,7 +51,8 @@ document.addEventListener("DOMContentLoaded", () => {
     start: "top top",
     end: "bottom 80px",
     onLeave: () => document.getElementById("navbar").classList.add("scrolled"),
-    onEnterBack: () => document.getElementById("navbar").classList.remove("scrolled"),
+    onEnterBack: () =>
+      document.getElementById("navbar").classList.remove("scrolled"),
   });
 
   // ─── Hero entrance timeline ───
@@ -27,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ease: "back.out(1.4)",
     })
     .from(
-      ".hero-title-hindi",
+      ".hero-title-brand",
       {
         y: 40,
         autoAlpha: 0,
@@ -108,6 +147,19 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 
+  // ─── Dashboard preview ───
+  gsap.from("#dashboard-img", {
+    y: 60,
+    autoAlpha: 0,
+    duration: 0.9,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: "#dashboard-preview",
+      start: "top 80%",
+      toggleActions: "play none none none",
+    },
+  });
+
   // ─── Gallery section ───
   gsap.from("#gallery-tag", {
     y: 20,
@@ -139,6 +191,20 @@ document.addEventListener("DOMContentLoaded", () => {
     scrollTrigger: {
       trigger: "#gallery",
       start: "top 70%",
+      toggleActions: "play none none none",
+    },
+  });
+
+  // ─── Waitlist section ───
+  gsap.from("#waitlist-glass", {
+    y: 50,
+    autoAlpha: 0,
+    scale: 0.97,
+    duration: 0.8,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: "#waitlist",
+      start: "top 75%",
       toggleActions: "play none none none",
     },
   });
@@ -199,7 +265,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   ctaTl
-    .from(".cta-title-hindi", {
+    .from(".cta-title-brand", {
       scale: 0.8,
       autoAlpha: 0,
       duration: 0.7,
@@ -242,7 +308,7 @@ document.addEventListener("DOMContentLoaded", () => {
     gsap.set(
       [
         "#hero-logo",
-        ".hero-title-hindi",
+        ".hero-title-brand",
         ".hero-title-sub",
         "#hero-desc",
         "#hero-actions .btn",
@@ -250,14 +316,16 @@ document.addEventListener("DOMContentLoaded", () => {
         "#features-tag",
         "#features-title",
         ".feature-card",
+        "#dashboard-img",
         "#gallery-tag",
         "#gallery-title",
         "#gallery-subtitle",
+        "#waitlist-glass",
         "#vision-tag",
         "#vision-title",
         ".stat-item",
         "#vision-text",
-        ".cta-title-hindi",
+        ".cta-title-brand",
         "#cta-title",
         "#cta-desc",
         "#cta-actions .btn",

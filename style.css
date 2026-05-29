@@ -256,7 +256,7 @@ img {
   margin-bottom: 24px;
 }
 
-.hero-title-hindi {
+.hero-title-brand {
   display: block;
   font-family: var(--font-display);
   font-size: clamp(3.5rem, 8vw, 7rem);
@@ -443,6 +443,68 @@ img {
 }
 
 /* ============================
+   DASHBOARD PREVIEW
+   ============================ */
+.dashboard-preview {
+  margin-top: 80px;
+  text-align: center;
+}
+
+.dashboard-label {
+  margin-bottom: 32px;
+}
+
+.dashboard-caption {
+  font-size: 1rem;
+  color: var(--gray-500);
+  margin-top: 8px;
+}
+
+.dashboard-caption strong {
+  color: var(--green-dark);
+  font-weight: 700;
+}
+
+.dashboard-img-wrapper {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--gray-200);
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.04),
+    0 20px 60px rgba(27, 67, 50, 0.08);
+  position: relative;
+}
+
+.dashboard-img-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 36px;
+  background: var(--gray-100);
+  border-bottom: 1px solid var(--gray-200);
+  z-index: 1;
+}
+
+.dashboard-img-wrapper::after {
+  content: '● ● ●';
+  position: absolute;
+  top: 8px;
+  left: 14px;
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: var(--gray-300);
+  z-index: 2;
+}
+
+.dashboard-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================
    POTHOLE GALLERY
    ============================ */
 #gallery {
@@ -468,6 +530,10 @@ img {
 .gallery-subtitle {
   font-size: 1.05rem;
   color: var(--gray-500);
+}
+
+#gallery .section-tag {
+  border-color: rgba(82, 183, 136, 0.3);
 }
 
 .gallery-marquee-wrapper {
@@ -533,6 +599,175 @@ img {
 @keyframes marqueeScroll {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
+}
+
+/* ============================
+   WAITLIST — GLASSMORPHISM
+   ============================ */
+#waitlist {
+  position: relative;
+  padding: var(--section-pad) 40px;
+  overflow: hidden;
+  background: var(--black-soft);
+}
+
+.waitlist-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 30%, rgba(82, 183, 136, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 80%, rgba(27, 67, 50, 0.2) 0%, transparent 60%),
+    radial-gradient(ellipse at 50% 50%, rgba(45, 106, 79, 0.08) 0%, transparent 80%);
+  pointer-events: none;
+}
+
+.waitlist-content {
+  max-width: 720px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.waitlist-glass {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 28px;
+  padding: 56px 48px;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.waitlist-text {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.waitlist-tag {
+  border-color: rgba(82, 183, 136, 0.4);
+}
+
+.waitlist-title {
+  font-family: var(--font-body);
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 700;
+  color: var(--white-pure);
+  line-height: 1.25;
+  margin-bottom: 14px;
+}
+
+.waitlist-desc {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.6;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.waitlist-form {
+  text-align: center;
+}
+
+.waitlist-input-group {
+  display: flex;
+  gap: 0;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 60px;
+  padding: 6px;
+  transition: border-color 0.3s ease;
+}
+
+.waitlist-input-group:focus-within {
+  border-color: var(--green-accent);
+  box-shadow: 0 0 0 3px rgba(82, 183, 136, 0.15);
+}
+
+#waitlist-email {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 14px 24px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--white-pure);
+  min-width: 0;
+}
+
+#waitlist-email::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.waitlist-btn {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 60px;
+  border: none;
+  background: var(--green-accent);
+  color: var(--white-pure);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-out);
+}
+
+.waitlist-btn:hover {
+  background: var(--green-light);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(82, 183, 136, 0.3);
+}
+
+.waitlist-btn-arrow {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s var(--ease-out);
+}
+
+.waitlist-btn:hover .waitlist-btn-arrow {
+  transform: translateX(3px);
+}
+
+.waitlist-fine {
+  margin-top: 16px;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.waitlist-fine strong {
+  color: var(--green-accent);
+  font-weight: 600;
+}
+
+/* Success state */
+.waitlist-success {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.success-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--green-accent);
+  color: var(--white-pure);
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.waitlist-success p {
+  font-size: 1.1rem;
+  color: var(--white-pure);
+  font-weight: 500;
 }
 
 /* ============================
@@ -633,7 +868,7 @@ img {
   margin-bottom: 20px;
 }
 
-.cta-title-hindi {
+.cta-title-brand {
   display: block;
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 6vw, 4.5rem);
@@ -764,6 +999,35 @@ img {
   #features,
   #vision {
     padding: var(--section-pad) 24px;
+  }
+
+  #waitlist {
+    padding: var(--section-pad) 20px;
+  }
+
+  .waitlist-glass {
+    padding: 40px 24px;
+    border-radius: 20px;
+  }
+
+  .waitlist-input-group {
+    flex-direction: column;
+    border-radius: 16px;
+    gap: 0;
+  }
+
+  #waitlist-email {
+    text-align: center;
+    padding: 16px;
+  }
+
+  .waitlist-btn {
+    justify-content: center;
+    border-radius: 60px;
+  }
+
+  .dashboard-preview {
+    margin-top: 48px;
   }
 }
 

@@ -24,14 +24,14 @@
     <div class="nav-inner">
       <a href="#" class="nav-logo" id="nav-logo">
         <img src="logo_no-text.jpg" alt="Darshi Logo" class="nav-logo-img">
-        <span class="nav-logo-text">दर्शी</span>
+        <span class="nav-logo-text">Darshi</span>
       </a>
       <ul class="nav-links" id="nav-links">
         <li><a href="#features">What We Do</a></li>
         <li><a href="#gallery">The Problem</a></li>
         <li><a href="#vision">Vision</a></li>
       </ul>
-      <a href="#cta" class="nav-cta" id="nav-cta-btn">Report Now</a>
+      <a href="#waitlist" class="nav-cta" id="nav-cta-btn">Get Early Access</a>
     </div>
   </nav>
 
@@ -43,7 +43,7 @@
         <img src="logo_no-text.jpg" alt="Darshi Eye Logo" class="hero-logo" id="hero-logo">
       </div>
       <h1 class="hero-title" id="hero-title">
-        <span class="hero-title-hindi">दर्शी</span>
+        <span class="hero-title-brand">Darshi</span>
         <span class="hero-title-sub">See the Roads. Fix the System.</span>
       </h1>
       <p class="hero-desc" id="hero-desc">
@@ -70,22 +70,25 @@
       <div class="feature-card" id="feature-report">
         <div class="feature-icon">
           <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="24" cy="24" r="22" stroke="currentColor" stroke-width="2"/>
-            <path d="M24 12v14l8 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="24" cy="20" r="8" stroke="currentColor" stroke-width="2"/>
+            <path d="M4 20C4 20 12 8 24 8s20 12 20 12-8 12-20 12S4 20 4 20z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M12 36l-4 8M36 36l4 8M24 32v12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           </svg>
         </div>
         <h3>Report Road Conditions</h3>
-        <p>Submit photos and GPS-tagged reports that get routed to <strong>multiple authorities simultaneously</strong> — municipal, state, and national agencies.</p>
+        <p>Snap a photo, tag the location, and Darshi routes your report to <strong>municipal, state, and national agencies</strong> — all at once. No more guessing who to call.</p>
       </div>
       <div class="feature-card" id="feature-contracts">
         <div class="feature-icon">
           <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="6" y="6" width="36" height="36" rx="4" stroke="currentColor" stroke-width="2"/>
-            <path d="M14 18h20M14 24h14M14 30h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <rect x="6" y="4" width="36" height="40" rx="4" stroke="currentColor" stroke-width="2"/>
+            <path d="M14 14h20M14 22h14M14 30h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="36" cy="36" r="8" fill="currentColor" opacity="0.15"/>
+            <path d="M33 36h6M36 33v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           </svg>
         </div>
         <h3>Unified Contracts & Bids</h3>
-        <p>Government road contracts, tenders, and bids — <strong>all in one searchable place</strong>. Know who got the contract and what was promised.</p>
+        <p>Every government road contract, tender, and bid — <strong>searchable in one place</strong>. Track who won, what was promised, and what was actually delivered.</p>
       </div>
       <div class="feature-card" id="feature-expose">
         <div class="feature-icon">
@@ -94,8 +97,19 @@
             <path d="M24 18v12M24 34v2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
           </svg>
         </div>
-        <h3>Expose the Responsible</h3>
-        <p>Names of contractors and officials linked to failed infrastructure — <strong>publicly visible</strong>. No more hiding behind bureaucracy.</p>
+        <h3>Name & Shame</h3>
+        <p>Contractors who built roads that crumbled, officials who signed off — their names go <strong>public</strong>. Accountability starts with visibility.</p>
+      </div>
+    </div>
+
+    <!-- Dashboard Preview -->
+    <div class="dashboard-preview" id="dashboard-preview">
+      <div class="dashboard-label">
+        <span class="section-tag">Live Dashboard</span>
+        <p class="dashboard-caption">Our data engine already indexes <strong>5,400+</strong> government records across districts.</p>
+      </div>
+      <div class="dashboard-img-wrapper">
+        <img src="dashboard-working.jpeg" alt="Darshi Dashboard — structured government data with 5400+ entries" class="dashboard-img" id="dashboard-img">
       </div>
     </div>
   </section>
@@ -178,6 +192,36 @@
     </div>
   </section>
 
+  <!-- ===== WAITLIST / EMAIL COLLECTION ===== -->
+  <section id="waitlist">
+    <div class="waitlist-bg"></div>
+    <div class="waitlist-content">
+      <div class="waitlist-glass" id="waitlist-glass">
+        <div class="waitlist-text">
+          <span class="section-tag waitlist-tag" id="waitlist-tag">Early Access</span>
+          <h2 class="waitlist-title" id="waitlist-title">Be the first to know<br>when Darshi launches.</h2>
+          <p class="waitlist-desc" id="waitlist-desc">We're building the civic platform India needs. Drop your email and we'll keep you in the loop — no spam, just progress.</p>
+        </div>
+        <form class="waitlist-form" id="waitlist-form" onsubmit="return handleWaitlist(event)">
+          <div class="waitlist-input-group">
+            <input type="email" id="waitlist-email" placeholder="your@email.com" required autocomplete="email">
+            <button type="submit" class="btn btn-primary waitlist-btn" id="waitlist-submit-btn">
+              <span class="waitlist-btn-text">Get Early Access</span>
+              <svg class="waitlist-btn-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+          <p class="waitlist-fine" id="waitlist-fine">Join <strong>200+</strong> citizens already on the waitlist. We respect your privacy.</p>
+        </form>
+        <div class="waitlist-success" id="waitlist-success" style="display:none;">
+          <div class="success-icon">✓</div>
+          <p>You're on the list! We'll reach out soon.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== VISION ===== -->
   <section id="vision">
     <div class="vision-content">
@@ -209,13 +253,13 @@
   <section id="cta">
     <div class="cta-content">
       <h2 class="cta-title" id="cta-title">
-        <span class="cta-title-hindi">दर्शी</span>
+        <span class="cta-title-brand">Darshi</span>
         The eye that watches<br>the roads.
       </h2>
       <p class="cta-desc" id="cta-desc">Join the movement. Report a pothole. Demand accountability.</p>
       <div class="cta-actions" id="cta-actions">
-        <a href="#" class="btn btn-primary btn-lg" id="cta-report-btn">Report a Road Issue</a>
-        <a href="#" class="btn btn-outline btn-lg" id="cta-join-btn">Join as Volunteer</a>
+        <a href="#waitlist" class="btn btn-primary btn-lg" id="cta-report-btn">Join the Waitlist</a>
+        <a href="#" class="btn btn-outline btn-lg" id="cta-join-btn">Volunteer With Us</a>
       </div>
     </div>
   </section>
@@ -225,7 +269,7 @@
     <div class="footer-inner">
       <div class="footer-brand">
         <img src="logo_no-text.jpg" alt="Darshi" class="footer-logo">
-        <span class="footer-brand-text">दर्शी</span>
+        <span class="footer-brand-text">Darshi</span>
       </div>
       <p class="footer-tagline">See the Roads. Fix the System.</p>
       <div class="footer-bottom">
