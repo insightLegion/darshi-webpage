@@ -227,15 +227,20 @@ img { display: block; max-width: 100%; }
 /* ── "Coming to a pothole near you" label ── */
 .collect-evidence-label {
   position: absolute;
-  bottom: 32px;
+  bottom: 48px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 3;
   font-family: var(--font-display);
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
-  color: rgba(255, 255, 255, 0.35);
-  letter-spacing: 0.06em;
-  white-space: nowrap;
+  font-size: clamp(1.4rem, 4vw, 2.6rem);
+  color: var(--white-pure);
+  letter-spacing: 0.05em;
+  text-align: center;
+  text-transform: uppercase;
+  width: 90%;
+  max-width: 800px;
+  font-weight: 700;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.95), 0 2px 4px rgba(0, 0, 0, 0.95);
 }
 
 /* ── Glassmorphism card ── */
@@ -803,7 +808,7 @@ img { display: block; max-width: 100%; }
 
   .btn-lg { width: 100%; max-width: 320px; }
 
-  .collect-evidence-label { font-size: 0.8rem; }
+  .collect-evidence-label { font-size: 1.2rem; }
 
   .evidence-row img {
     width: 150px;
