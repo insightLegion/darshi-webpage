@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Darshi — See the Roads. Fix the System.</title>
+  <meta name="description" content="Darshi is a civic platform to report road conditions to authorities, unify government contracts and bids, and bring transparency to infrastructure spending.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- GSAP -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js" defer></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" id="nav-logo">
+        <img src="logo_no-text.jpg" alt="Darshi Logo" class="nav-logo-img">
+        <span class="nav-logo-text">दर्शी</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#features">What We Do</a></li>
+        <li><a href="#gallery">The Problem</a></li>
+        <li><a href="#vision">Vision</a></li>
+      </ul>
+      <a href="#cta" class="nav-cta" id="nav-cta-btn">Report Now</a>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="hero">
+    <div class="hero-bg-pattern"></div>
+    <div class="hero-content">
+      <div class="hero-logo-wrapper" id="hero-logo-wrapper">
+        <img src="logo_no-text.jpg" alt="Darshi Eye Logo" class="hero-logo" id="hero-logo">
+      </div>
+      <h1 class="hero-title" id="hero-title">
+        <span class="hero-title-hindi">दर्शी</span>
+        <span class="hero-title-sub">See the Roads. Fix the System.</span>
+      </h1>
+      <p class="hero-desc" id="hero-desc">
+        One platform to report broken roads, expose failed contracts, and hold officials accountable.
+      </p>
+      <div class="hero-actions" id="hero-actions">
+        <a href="#features" class="btn btn-primary" id="hero-learn-btn">Learn More</a>
+        <a href="#gallery" class="btn btn-outline" id="hero-gallery-btn">See The Evidence</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint" id="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES ===== -->
+  <section id="features">
+    <div class="section-header">
+      <span class="section-tag" id="features-tag">What We Do</span>
+      <h2 class="section-title" id="features-title">Three Pillars of Transparency</h2>
+    </div>
+    <div class="features-grid" id="features-grid">
+      <div class="feature-card" id="feature-report">
+        <div class="feature-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="22" stroke="currentColor" stroke-width="2"/>
+            <path d="M24 12v14l8 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Report Road Conditions</h3>
+        <p>Submit photos and GPS-tagged reports that get routed to <strong>multiple authorities simultaneously</strong> — municipal, state, and national agencies.</p>
+      </div>
+      <div class="feature-card" id="feature-contracts">
+        <div class="feature-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="6" y="6" width="36" height="36" rx="4" stroke="currentColor" stroke-width="2"/>
+            <path d="M14 18h20M14 24h14M14 30h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Unified Contracts & Bids</h3>
+        <p>Government road contracts, tenders, and bids — <strong>all in one searchable place</strong>. Know who got the contract and what was promised.</p>
+      </div>
+      <div class="feature-card" id="feature-expose">
+        <div class="feature-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 4L6 44h36L24 4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M24 18v12M24 34v2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Expose the Responsible</h3>
+        <p>Names of contractors and officials linked to failed infrastructure — <strong>publicly visible</strong>. No more hiding behind bureaucracy.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== POTHOLE GALLERY ===== -->
+  <section id="gallery">
+    <div class="gallery-header">
+      <span class="section-tag" id="gallery-tag">The Evidence</span>
+      <h2 class="gallery-title" id="gallery-title">Coming to a pothole near you</h2>
+      <p class="gallery-subtitle" id="gallery-subtitle">Real roads. Real neglect. Documented by citizens across India.</p>
+    </div>
+    <div class="gallery-marquee-wrapper">
+      <div class="gallery-marquee" id="gallery-marquee-1">
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.26.48 PM.jpeg" alt="Pothole in Ranchi" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.26.49 PM (1).jpeg" alt="Broken road" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.26.49 PM.jpeg" alt="Road damage" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.26.50 PM (1).jpeg" alt="Unfixed road" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.26.50 PM (2).jpeg" alt="Pothole damage" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.26.50 PM.jpeg" alt="Road neglect" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.26.51 PM (1).jpeg" alt="Damaged infrastructure" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.26.51 PM (2).jpeg" alt="Road condition" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.26.51 PM.jpeg" alt="Broken road surface" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.26.52 PM (1).jpeg" alt="Road issue" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.26.52 PM.jpeg" alt="Infrastructure damage" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.26.53 PM.jpeg" alt="Civic issue" loading="lazy"></div>
+        <!-- duplicated for seamless loop -->
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.26.48 PM.jpeg" alt="Pothole in Ranchi" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.26.49 PM (1).jpeg" alt="Broken road" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.26.49 PM.jpeg" alt="Road damage" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.26.50 PM (1).jpeg" alt="Unfixed road" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.26.50 PM (2).jpeg" alt="Pothole damage" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.26.50 PM.jpeg" alt="Road neglect" loading="lazy"></div>
+      </div>
+    </div>
+    <div class="gallery-marquee-wrapper">
+      <div class="gallery-marquee gallery-marquee-reverse" id="gallery-marquee-2">
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.26.54 PM (1).jpeg" alt="Pothole report" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.26.54 PM (2).jpeg" alt="Road damage" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.26.54 PM.jpeg" alt="Infrastructure neglect" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.26.55 PM (1).jpeg" alt="Road condition" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.26.55 PM.jpeg" alt="Civic damage" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.26.56 PM (1).jpeg" alt="Broken road" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.26.56 PM (2).jpeg" alt="Road neglect" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.26.56 PM.jpeg" alt="Infrastructure damage" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.26.57 PM (1).jpeg" alt="Road issue" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.26.57 PM (2).jpeg" alt="Pothole" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.26.57 PM.jpeg" alt="Damaged road" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.26.58 PM (1).jpeg" alt="Road damage" loading="lazy"></div>
+        <!-- duplicated for seamless loop -->
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.26.54 PM (1).jpeg" alt="Pothole report" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.26.54 PM (2).jpeg" alt="Road damage" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.26.54 PM.jpeg" alt="Infrastructure neglect" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.26.55 PM (1).jpeg" alt="Road condition" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.26.55 PM.jpeg" alt="Civic damage" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.26.56 PM (1).jpeg" alt="Broken road" loading="lazy"></div>
+      </div>
+    </div>
+    <div class="gallery-marquee-wrapper">
+      <div class="gallery-marquee" id="gallery-marquee-3">
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.26.58 PM.jpeg" alt="Road damage" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.26.59 PM (1).jpeg" alt="Pothole" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.26.59 PM (2).jpeg" alt="Road neglect" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.26.59 PM.jpeg" alt="Infrastructure issue" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.27.00 PM (1).jpeg" alt="Civic problem" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.27.00 PM.jpeg" alt="Broken road" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.27.01 PM (1).jpeg" alt="Road damage" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.27.01 PM (2).jpeg" alt="Pothole damage" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.27.01 PM.jpeg" alt="Road issue" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.27.02 PM (1).jpeg" alt="Infrastructure damage" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.27.02 PM (2).jpeg" alt="Civic report" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.27.02 PM.jpeg" alt="Road surface" loading="lazy"></div>
+        <!-- duplicated for seamless loop -->
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.26.58 PM.jpeg" alt="Road damage" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.26.59 PM (1).jpeg" alt="Pothole" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.26.59 PM (2).jpeg" alt="Road neglect" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.27.00 PM (1).jpeg" alt="Civic problem" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.27.00 PM.jpeg" alt="Broken road" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/WhatsApp Image 2026-05-29 at 3.27.01 PM (1).jpeg" alt="Road damage" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VISION ===== -->
+  <section id="vision">
+    <div class="vision-content">
+      <span class="section-tag" id="vision-tag">The Vision</span>
+      <h2 class="vision-title" id="vision-title">Roads built with<br>our money deserve<br><span class="text-accent">our oversight.</span></h2>
+      <div class="vision-stats" id="vision-stats">
+        <div class="stat-item" id="stat-1">
+          <span class="stat-number">₹3.2L Cr</span>
+          <span class="stat-label">Spent on roads annually</span>
+        </div>
+        <div class="stat-item" id="stat-2">
+          <span class="stat-number">1.5 Lakh+</span>
+          <span class="stat-label">Road accident deaths/year</span>
+        </div>
+        <div class="stat-item" id="stat-3">
+          <span class="stat-number">0</span>
+          <span class="stat-label">Unified accountability platforms</span>
+        </div>
+      </div>
+      <p class="vision-text" id="vision-text">
+        Darshi connects citizens directly with the agencies responsible for road maintenance. 
+        No more endless redirects. No more "not our department." 
+        One report. Every authority notified. Full transparency.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section id="cta">
+    <div class="cta-content">
+      <h2 class="cta-title" id="cta-title">
+        <span class="cta-title-hindi">दर्शी</span>
+        The eye that watches<br>the roads.
+      </h2>
+      <p class="cta-desc" id="cta-desc">Join the movement. Report a pothole. Demand accountability.</p>
+      <div class="cta-actions" id="cta-actions">
+        <a href="#" class="btn btn-primary btn-lg" id="cta-report-btn">Report a Road Issue</a>
+        <a href="#" class="btn btn-outline btn-lg" id="cta-join-btn">Join as Volunteer</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo_no-text.jpg" alt="Darshi" class="footer-logo">
+        <span class="footer-brand-text">दर्शी</span>
+      </div>
+      <p class="footer-tagline">See the Roads. Fix the System.</p>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Darshi. Built for the people.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
